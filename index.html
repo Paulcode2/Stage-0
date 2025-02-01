@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <img
+        data-testid="profilePicture"
+        src="images/Paul 2.jpeg"
+        alt="Profile Picture"
+      />
+      <h2 data-testid="fullName">Paul Ifeoluwa-Levites</h2>
+      <p data-testid="jobTitle">Frontend Developer</p>
+      <p data-testid="shortBio">
+        <strong>Short Bio:</strong> Passionate about solving problems by
+        building user-friendly web applications.
+      </p>
+      <p data-testid="currentLocation"><strong>Location:</strong> Lagos, Nigeria</p>
+      <p data-testid="emailAddress">
+        <strong>Email:</strong> paullevites84@gmail.com
+      </p>
+      <div data-testid="socialLinks" class="social-links">
+        <a href="https://x.com/curlyhair_dev" target="_blank">X</a> |
+        <a href="https://linkedin.com/in/paul-ifeoluwa-levites">LinkedIn</a> |
+        <a href="https://github.com/Paulcode2">GitHub</a>
+      </div>
+      <p data-testid="currentTimeUTC"
+      ><strong>Current UTC Time:</strong> <span id="utc-time"></span></p>
+      <!-- <button class="toggle-btn" onclick="toggleTheme()">Color Mode</button> -->
+    </div>
+
+    <script>
+    //   function toggleTheme() {
+    //     document.body.classList.toggle("dark-mode");
+    //   }
+
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("utc-time").textContent = now.toUTCString();
+      }
+
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+  </body>
+</html>
